@@ -1,55 +1,48 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import { HiMenu } from "react-icons/hi";
-import { IoMdClose } from "react-icons/io";
 import { FaShoppingCart } from "react-icons/fa";
 
 
 const Navbar = () => {
 
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
-  const toggleMenu = () => setMenuOpen(!menuOpen);
-  const closeMenu = () => setMenuOpen(false);
 
 
   return (
-    <>
-    <header className='w-[245px] h-[38px] flex flex-row items-center '></header>
-    <div className='flex flex-row gap-5 items-center'>
-    <button 
-          className="block md:hidden text-black text-3xl" 
-          onClick={toggleMenu}
-        >
-          {menuOpen ? <IoMdClose /> : <HiMenu />}
-        </button>
-        
-        {menuOpen && (
-          <div className="absolute top-16 left-0 w-full bg-white shadow-md p-4 flex flex-col items-center md:hidden">
-            <Link to="/" className="text-black hover:underline mb-2" onClick={closeMenu}>
-             Home
-            </Link>
-            <Link to="/about-page" className="text-black hover:underline mb-2" onClick={closeMenu}>
-              About Us
-            </Link>
-          </div>
-        )}
-      <p className='font-serif font-normal text-black text-sm md:hidden '>Menu</p>
-      <FaShoppingCart className='ml-60 md:hidden' />
-      </div>
-<div className="flex flex-row items-center gap-6 float-right mr-10">
-          <Link to="/" className="text-black hover:underline">
-            Home
-          </Link>
-          <Link to="/about-page" className="text-black hover:underline">
-           About Us
-          </Link>
-          <FaShoppingCart />
-          <p className='font-serif font-normal text-black'>Cart</p>
+    <nav className="p-4 bg-white shadow-md">
+      <div className="container mx-auto flex items-center justify-between">
+
+        <div className="md:hidden flex items-center">
+          <button onClick={() => setIsOpen(!isOpen)} className="text-blue-900">
+            <HiMenu size={24} />
+          </button>
+          <span className="ml-2 text-blue-900 font-semibold">MENU</span>
         </div>
 
-    </>
-  )
+
+        <div className="hidden md:flex space-x-6 text-blue-900">
+          <Link to="/" className="hover:underline">Home</Link>
+          <Link to="about-page" className="hover:underline">About Us</Link>
+        </div>
+
+
+        <div className="flex items-center">
+          <FaShoppingCart size={24} className="text-blue-900" />
+          <span className="hidden md:inline ml-2 text-blue-900">Cart</span>
+        </div>
+      </div>
+
+
+      {isOpen && (
+        <div className="md:hidden mt-2 bg-white shadow-md p-4">
+          <Link to="/" className="block py-2 text-blue-900 hover:underline">Home</Link>
+          <Link to="/about-page" className="block py-2 text-blue-900 hover:underline">About Us</Link>
+        </div>
+      )}
+    </nav>
+  );
 }
 
 export default Navbar;
