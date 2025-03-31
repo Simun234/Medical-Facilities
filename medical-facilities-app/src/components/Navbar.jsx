@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import { HiMenu } from "react-icons/hi";
-import { FaShoppingCart } from "react-icons/fa";
+
 
 
 const Navbar = () => {
@@ -28,10 +28,7 @@ const Navbar = () => {
         </div>
 
 
-        <div className="flex items-center">
-          <FaShoppingCart size={24} className="text-blue-900" />
-          <span className="hidden md:inline ml-2 text-blue-900">Cart</span>
-        </div>
+       
       </div>
 
 
