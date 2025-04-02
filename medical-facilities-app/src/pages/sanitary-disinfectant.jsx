@@ -23,18 +23,19 @@ function SanitaryDisinfectant() {
     e.preventDefault();
     console.log("Form submitted:", formData);
     alert("Form submitted successfully!");
+    window.location.href = "/"; 
   };
 
   return (
     <div className="flex items-center justify-center mt-12">
-      <div className="flex flex-col w-[424px] h-auto bg-white border border-black p-4">
+      <div className="flex flex-col w-[424px] h-auto bg-white border border-black rounded p-4">
         <h1 className="font-serif font-bold text-black text-center mt-5">
           Sanitizing/Disinfectant Needs Tracking Form
         </h1>
         <hr className="border-[#DDDEE0]" />
 
         <form onSubmit={handleSubmit} className="flex flex-col items-center space-y-4">
-          <label className="font-serif text-lg text-black">Your Email:</label>
+          <label className="font-serif text-lg text-black mt-4">Your Email:</label>
           <input
             type="email"
             name="email"

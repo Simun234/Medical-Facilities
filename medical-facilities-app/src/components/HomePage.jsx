@@ -103,7 +103,7 @@ function HomePage() {
               <MdSanitizer className="w-[30px] h-[40px]" />
               <p className="font-serif font-bold text-[#026CCE] text-center">Sanitary Disinfectant</p>
             </button>
-            <button className="flex flex-row gap-5 items-center w-[300px] h-[66px] bg-[#AACCFB]  mt-5 md:w-[423px] gap-25">
+            <button className="flex flex-row gap-5 items-center w-[300px] h-[66px] bg-[#AACCFB]  mt-5 md:w-[423px] gap-25" onClick={ () => navigate ("/sanitary-form")}>
               <TbHandSanitizer className="w-[30px] h-[40px]" />
               <p className="font-serif font-bold text-[#026CCE] text-center">Order a Sanitizer</p>
             </button>
