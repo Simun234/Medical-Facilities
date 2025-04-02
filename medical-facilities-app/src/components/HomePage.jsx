@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
 import { FaPumpMedical } from "react-icons/fa";
 import { MdSanitizer } from "react-icons/md";
@@ -9,6 +10,7 @@ import ThirdImage from "../images/third-picture.jpg";
 import FourthImage from "../images/fourth-picture.jpg";
 
 function HomePage() {
+  const navigate = useNavigate();
   const [filter, setFilter] = useState("");
   const [cart, setCart] = useState([]);
 
@@ -97,14 +99,14 @@ function HomePage() {
               <p className="mt-5 text-red-600 font-semibold">No results found.</p>
             )}
 
-            <div className="flex flex-row gap-5 items-center w-[300px] h-[66px] bg-[#AACCFB] mt-5 md:w-[423px] gap-25">
+            <button className="flex flex-row gap-5 items-center w-[300px] h-[66px] bg-[#AACCFB]  mt-5 md:w-[423px] gap-25" onClick={ () => navigate ("/sanitary-disinfectant")}>
               <MdSanitizer className="w-[30px] h-[40px]" />
               <p className="font-serif font-bold text-[#026CCE] text-center">Sanitary Disinfectant</p>
-            </div>
-            <div className="flex flex-row gap-5 items-center w-[300px] h-[66px] bg-[#AACCFB] mt-5 md:w-[423px] gap-25">
+            </button>
+            <button className="flex flex-row gap-5 items-center w-[300px] h-[66px] bg-[#AACCFB]  mt-5 md:w-[423px] gap-25">
               <TbHandSanitizer className="w-[30px] h-[40px]" />
               <p className="font-serif font-bold text-[#026CCE] text-center">Order a Sanitizer</p>
-            </div>
+            </button>
           </div>
 
           {cart.length > 0 && (
