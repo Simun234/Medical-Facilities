@@ -55,7 +55,7 @@ function HomePage() {
     <>
       <Navbar />
       <div className="flex items-center justify-center">
-        <div className="w-[600px] h-[217px] bg-gradient-to-r from-[#4FC3F7] to-[#00897B] flex items-center justify-center md:w-[900px] lg:w-[1200px]">
+      <div className="w-full max-w-screen-lg h-[217px] bg-gradient-to-r from-[#4FC3F7] to-[#00897B] flex items-center justify-center px-4">
           <div className="flex flex-col gap-4 justify-center items-center">
             <FaPumpMedical className="w-[60px] h-[80px]" />
             <h1 className="font-serif font-normal text-black">Medical Facilities</h1>
@@ -65,7 +65,7 @@ function HomePage() {
       </div>
 
       <div className="flex flex-col items-center mt-6">
-        <div className="w-[600px] border rounded bg-gradient-to-br from-blue-100 to-blue-400 md:w-[900px] lg:w-[1200px] p-5">
+      <div className="w-full max-w-screen-lg border rounded bg-gradient-to-br from-blue-100 to-blue-400 p-5 px-4">
           <p className="font-serif font-normal text-lg text-black">Services</p>
           <input
             type="text"
@@ -80,7 +80,7 @@ function HomePage() {
               filteredServices.map((service, index) => (
                 <div
                   key={index}
-                  className="w-[300px] flex items-center gap-4 border border-slate-400 p-3 rounded-lg shadow-lg mt-3 md:w-[423px] gap-16"
+                 className="w-full max-w-sm flex items-center gap-4 border border-slate-400 p-3 rounded-lg shadow-lg mt-3"
                 >
                   <img src={service.img} alt={service.title} className="w-[100px] h-[80px] object-cover" />
                   <div className="flex flex-col text-center">
@@ -99,11 +99,11 @@ function HomePage() {
               <p className="mt-5 text-red-600 font-semibold">No results found.</p>
             )}
 
-            <button className="flex flex-row gap-5 items-center w-[300px] h-[66px] bg-[#AACCFB]  mt-5 md:w-[423px] gap-25" onClick={ () => navigate ("/sanitary-disinfectant")}>
+            <button className="flex flex-row gap-5 items-center w-full max-w-sm flex flex-row gap-5 items-center h-[66px] bg-[#AACCFB] mt-5" onClick={ () => navigate ("/sanitary-disinfectant")}>
               <MdSanitizer className="w-[30px] h-[40px]" />
               <p className="font-serif font-bold text-[#026CCE] text-center">Sanitary Disinfectant</p>
             </button>
-            <button className="flex flex-row gap-5 items-center w-[300px] h-[66px] bg-[#AACCFB]  mt-5 md:w-[423px] gap-25" onClick={ () => navigate ("/sanitary-form")}>
+            <button className="flex flex-row gap-5 items-center w-full max-w-sm flex flex-row gap-5 items-center h-[66px] bg-[#AACCFB] mt-5" onClick={ () => navigate ("/sanitary-form")}>
               <TbHandSanitizer className="w-[30px] h-[40px]" />
               <p className="font-serif font-bold text-[#026CCE] text-center">Order a Sanitizer</p>
             </button>
